@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista Musical</title>
+    <link rel="stylesheet" href="static/css/estilolistamusical.css">
+</head>
+
+<body>
+    <h1>Músicas Favoritadas</h1>
+    <ul>
+        {% for musica in nome_musica %}
+            <li>{{ musica[1] }} - {{ musica[2] }} ({{ musica[3] }})
+                <a href="/editar_musica/{{ musica[0] }}">Editar</a>
+                <a href="/apagar_musica/{{ musica[0] }}">Apagar</a>
+            </li>
+        {% endfor %}
+    </ul>
+    <a href="/">Voltar para a página inicial</a>
+</body>
+</html>
